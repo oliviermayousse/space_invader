@@ -49,11 +49,13 @@ class GameMenu:
 			width = label.get_rect().width
 			height = label.get_rect().height
 
+                        #  LIB ==>  deportez dans une fonction de librairie dynamique Linux en langage C le calcul ligne ci-dessous (type des variables => entiers)
 			posx = (self.scr_width / 2) - (width / 2)
 
 			# t_h: total height of text block
 			t_h = len(items) * height
 
+                        #  LIB ==>  deportez dans une fonction de librairie dynamique Linux en langage C le calcul ligne ci-dessous (type des variables => entiers)
 			posy = (self.scr_height / 2) - (t_h / 2) + (index * height)
 			self.menu_items.append([item, label, (width, height), (posx, posy)])
 
@@ -76,20 +78,16 @@ class GameMenu:
 				elif event.type == pygame.KEYDOWN:
 					if event.key == pygame.K_UP:
 						self.menu_sound.play()
-############################   LIB  #####################################
 						for index, item in enumerate(self.menu_items):
 							if self.current_item[0] == item[0]:
 								if self.index_selected > 0:
 									self.index_selected -= 1
-#########################################################################
 					if event.key == pygame.K_DOWN:
 						self.menu_sound.play()
-############################   LIB  #####################################
 						for index, item in enumerate(self.menu_items):
 							if self.current_item[0] == item[0]:
 								if self.index_selected < (len(self.menu_items) - 1):
 									self.index_selected += 1
-#########################################################################
 					if event.key == pygame.K_RETURN:
 						self.valid_menu_sound.play()
 						if len(self.current_item) > 0:
@@ -120,11 +118,10 @@ class GameMenu:
 
 				pygame.draw.rect(
 					self.screen, (255, 255, 255),
-					[
-############################   LIB  #####################################
+                                        [
+                                                #  LIB ==>  deportez dans une fonction de la librairie dynamique Linux en langage C les calculs ci-dessous (type des variables => entiers) :
 						posx - self.paddingx, posy - self.paddingy,
 						width + self.paddingx + self.paddingx, height + self.paddingy
-#########################################################################
 					], 2)
 
 			pygame.display.flip()

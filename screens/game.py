@@ -103,7 +103,9 @@ class Game:
 			# Keyboard Events
 			keys = pygame.key.get_pressed()
 
-############################   LIB  #####################################
+                        #  LIB ==>  deportez dans une fonction de librairie dynamique Linux en langage C les calculs des positions ci-dessous de :
+                        #               1) self.spaceship.sprite.x    => type entier
+                        #               2) self.bullet.sprite.x       => type entier
 			if keys[pygame.K_LEFT]:
 				self.spaceship.sprite.x -= 10
 				if self.spaceship.shooting is False:
@@ -118,7 +120,6 @@ class Game:
 				# Go back to the game menu
 				mainloop = False
 				self.escape_selected = True
-#########################################################################
 				pygame.mixer.music.rewind()
 
 
@@ -126,7 +127,6 @@ class Game:
 			if self.spaceship.shoot is True:
 				self.laser_sound.play()
 
-############################   LIB  #####################################
 				if self.bullet.sprite.y > 0 and self.invader_exploding is False:
 					self.spaceship.shooting = True
 					self.bullet.sprite = self.bullet.sprite.move([0, -6])
@@ -139,7 +139,6 @@ class Game:
 					self.spaceship.shoot = False
 					self.spaceship.shooting = False
 					self.invader_exploding = False
-#########################################################################
 
 
 			item_to_remove = None
@@ -238,11 +237,12 @@ class Game:
 
 			for life in self.lifes:
 				self.screen.blit(life.image, life.sprite)
-
+	
 			if self.victory:
 				self.screen.blit(
 					self.label_victory,
 					(
+                        #  LIB ==>  deportez dans une fonction de la librairie dynamique Linux en langage C les 2 calculs ci-dessous (types des variables => entiers) :
 						self.scr_width / 2 - self.label_victory.get_rect().width / 2,
 						self.scr_height / 2 - self.label_victory.get_rect().height / 2
 					)
@@ -252,6 +252,7 @@ class Game:
 				self.screen.blit(
 					self.label_game_over,
 					(
+                        #  LIB ==>  deportez dans une fonction de la librairie dynamique Linux en langage C les 2 calculs ci-dessous (type des variables => entiers) :
 						self.scr_width / 2 - self.label_game_over.get_rect().width / 2,
 						self.scr_height / 2 - self.label_game_over.get_rect().height / 2
 					)
